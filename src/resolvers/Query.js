@@ -9,7 +9,9 @@ async function feed(parent, args, context) {
     : {}
 
   const reviews = await context.prisma.reviews({
-    where
+    where,
+    skip: args.skip,
+    first: args.first
   })
   return reviews
 }

@@ -1,6 +1,6 @@
 type Query {
   info: String!
-  feed(filter: String): [Review!]!
+  feed(filter: String, skip: Int, first: Int): [Review!]!
 }
 
 type Mutation {
