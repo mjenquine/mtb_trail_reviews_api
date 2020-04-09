@@ -1,10 +1,12 @@
+scalar DateTime
+
 type Query {
   info: String!
-  feed(filter: String, skip: Int, first: Int): [Review!]!
+  feed(filter: String, skip: Int, first: Int, orderBy: ReviewOrderByInput): Feed!
 }
 
 type Mutation {
-  post(trailName: String!, trailCondition: String!): Review
+  post(trailName: String!, trailCondition: String!): Review!
   signup(email: String!, password: String!, name: String!): AuthPayload
   login(email: String!, password: String!): AuthPayload
 }
@@ -13,8 +15,13 @@ type Subscription {
   newReview: Review
 }
 
+type Feed {
+  reviews: [Review!]!
+  count: Int!
+}
 type Review {
   id: ID!
+  createdAt: DateTime!
   trailName: String!
   trailCondition: String!
   postedBy: User
@@ -30,4 +37,13 @@ type User {
   name: String!
   email: String!
   reviews: [Review!]!
+}
+
+enum ReviewOrderByInput {
+  description_ASC
+  description_DESC
+  url_ASC
+  url_DESC
+  createdAt_ASC
+  createdAT_DESC
 }

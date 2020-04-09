@@ -11,9 +11,19 @@ async function feed(parent, args, context) {
   const reviews = await context.prisma.reviews({
     where,
     skip: args.skip,
-    first: args.first
+    first: args.first,
+    orderBy: args.orderBy
   })
-  return reviews
+  const count = await context.prisma
+    .reviewsConnection({
+      where,
+    })
+    .aggregate()
+    .count()
+  return {
+    reviews,
+    count,
+  }
 }
 
 module.exports = {
