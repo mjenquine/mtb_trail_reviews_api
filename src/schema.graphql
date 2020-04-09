@@ -45,5 +45,5 @@ enum ReviewOrderByInput {
   url_ASC
   url_DESC
   createdAt_ASC
-  createdAT_DESC
+  createdAt_DESC
 }
