@@ -19,3 +19,10 @@ exports.Prisma = prisma_lib_1.makePrismaClientClass({
   endpoint: `https://us1.prisma.sh/mjenquine-41af6a/mtb_trail_reviews_api/dev`
 });
 exports.prisma = new exports.Prisma();
+
+// exports.Prisma = prisma_lib_1.makePrismaClientClass({
+//   typeDefs,
+//   models,
+//   endpoint: `https://mtb-api-5b6e612ea3.herokuapp.com/mtb_trail_reviews_api/dev`
+// });
+// exports.prisma = new exports.Prisma();

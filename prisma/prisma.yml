@@ -1,5 +1,5 @@
 endpoint: https://us1.prisma.sh/mjenquine-41af6a/mtb_trail_reviews_api/dev
-
+# endpoint: https://mtb-api-5b6e612ea3.herokuapp.com/mtb_trail_reviews_api/dev
 datamodel: datamodel.prisma
 
 generate:
