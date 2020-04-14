@@ -23,6 +23,6 @@ var models = [
 exports.Prisma = prisma_lib_1.makePrismaClientClass({
   typeDefs,
   models,
-  endpoint: `https://mtb-api-5b6e612ea3.herokuapp.com/mtb_trail_reviews_api/dev`
+  endpoint: `https://serene-refuge-30866.herokuapp.com/`
 });
 exports.prisma = new exports.Prisma();
